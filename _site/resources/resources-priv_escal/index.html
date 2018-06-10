@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>priv_escal | 0v3rthr0w</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="priv_escal" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to Privilege Escalation" />
+<meta property="og:description" content="How to Privilege Escalation" />
+<link rel="canonical" href="http://localhost:4000/resources/resources-priv_escal/" />
+<meta property="og:url" content="http://localhost:4000/resources/resources-priv_escal/" />
+<meta property="og:site_name" content="0v3rthr0w" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-10T17:15:18-04:00" />
+<script type="application/ld+json">
+{"description":"How to Privilege Escalation","@type":"BlogPosting","url":"http://localhost:4000/resources/resources-priv_escal/","headline":"priv_escal","dateModified":"2018-06-10T17:15:18-04:00","datePublished":"2018-06-10T17:15:18-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/resources/resources-priv_escal/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="0v3rthr0w" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">0v3rthr0w</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/resources.html">Resources</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">priv_escal</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="how-to-privilege-escalation">How to Privilege Escalation</h1>
+
+<h2 id="concepts">concepts</h2>
+<ul>
+  <li>https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/
+    <ul>
+      <li>Collect - Enumeration, more enumeration and some more enumeration.</li>
+      <li>Process - Sort through data, analyse and prioritisation.</li>
+      <li>Search - Know what to search for and where to find the exploit code.</li>
+      <li>Adapt - Customize the exploit, so it fits. Not every exploit work for every system “out of the box”.</li>
+      <li>Try - Get ready for (lots of) trial and error.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="general-resources">General Resources</h2>
+<ul>
+  <li><a href="https://github.com/rmusser01/Infosec_Reference/">RMusser01 Priv Esc</a>
+    <ul>
+      <li><a href="https://github.com/rmusser01/Infosec_Reference/blob/master/Draft/Privilege%20Escalation%20%26%20Post-Exploitation.md">Post Exploitation</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="linux-resources">Linux Resources</h2>
+<ul>
+  <li><a href="https://highon.coffee/blog/linux-local-enumeration-script/">highoncoffee</a></li>
+  <li><a href="https://netsec.ws/?p=309">netsec linux priv esc</a></li>
+  <li><a href="https://github.com/pentestmonkey/unix-privesc-check">unix privesc check</a>
+    <ul>
+      <li><a href="http://pentestmonkey.net/tools/audit/unix-privesc-check">guide - pentestmonkey</a></li>
+    </ul>
+  </li>
+  <li>http://resources.infosecinstitute.com/privilege-escalation-linux-live-examples/</li>
+  <li><a href="https://github.com/PenturaLabs/Linux_Exploit_Suggester">linux exploit suggester</a></li>
+  <li><a href="https://www.rebootuser.com/?p=1623">Local Linux Enumeration &amp; Privilege Escalation Cheatsheet - rebootuser</a></li>
+  <li><a href="https://www.exploit-db.com/papers/33930/">wildcards gone wild</a></li>
+  <li><a href="https://github.com/sohaip-hackerDZ/local-root-exploit-">kernel exploits</a></li>
+  <li><a href="https://payatu.com/guide-linux-privilege-escalation/">guide to linux priv esc</a></li>
+</ul>
+
+<h3 id="mysql-udf-command-execution">mysql UDF command execution</h3>
+<ul>
+  <li>https://www.adampalmer.me/iodigitalsec/2013/08/13/mysql-root-to-system-root-with-udf-for-windows-and-linux/</li>
+  <li>https://bernardodamele.blogspot.com/2009/01/command-execution-with-mysql-udf.html</li>
+  <li><code class="highlighter-rouge">select sys_exec('usermod -a -G admin john');</code></li>
+  <li><a href="https://infamoussyn.com/2014/07/11/gaining-a-root-shell-using-mysql-user-defined-functions-and-setuid-binaries/">root shell mysql user defined functions</a></li>
+</ul>
+
+<h3 id="attempts">Attempts</h3>
+<ul>
+  <li>If target listen for inbound file transfer doesn’t work, try target request listening attacker</li>
+  <li>Also, here methods for settign up a server for requesting from target.
+    <ul>
+      <li><code class="highlighter-rouge">python -m SimpleHTTPServer 80</code> <a href="https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/">found here</a></li>
+      <li><code class="highlighter-rouge">impacket-smbserver $serv_name $local_dir</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="kernel-exploits">Kernel Exploits</h3>
+<ul>
+  <li>https://github.com/lucyoa/kernel-exploits</li>
+  <li>https://github.com/SecWiki/linux-kernel-exploits</li>
+  <li>https://github.com/BADC0D3/Unix-Privilege-Escalation-Exploits-Pack/tree/master/2014</li>
+  <li>https://github.com/mzet-/linux-exploit-suggester</li>
+</ul>
+
+<h3 id="wild-cards">Wild Cards</h3>
+<ul>
+  <li><a href="https://www.exploit-db.com/papers/33930/">Back To The Future: Unix Wildcards Gone Wild</a></li>
+</ul>
+
+<h3 id="python-lib-injection">Python Lib Injection</h3>
+<ul>
+  <li>
+    <h2 id="privilege-escalation-via-python-library-hijacking"><a href="https://www.rastating.com/privilege-escalation-via-python-library-hijacking/">Privilege Escalation via Python Library Hijacking</a></h2>
+  </li>
+</ul>
+
+<h2 id="windows">Windows</h2>
+<ul>
+  <li><a href="http://www.fuzzysecurity.com/tutorials/16.html]">Windows Privilege Escalation Fundamentals</a></li>
+  <li><a href="https://forums.offensive-security.com/showthread.php?t=4146">pwk accesschk</a></li>
+  <li>http://pentestmonkey.net/tools/windows-privesc-check</li>
+  <li>https://it-ovid.blogspot.com/2012/02/windows-privilege-escalation.html</li>
+  <li>https://www.gracefulsecurity.com/path-traversal-cheat-sheet-windows/</li>
+  <li><a href="https://pentestlab.blog/2017/04/24/windows-kernel-exploits/">windows priv esc table</a></li>
+  <li><a href="http://nomoreroot.blogspot.com/2008/10/windows-2003-poc-exploit-for-token.html">token kidnapping windows 2003 poc exploit</a></li>
+  <li><a href="https://github.com/GDSSecurity/Windows-Exploit-Suggester">windows exploit suggester</a></li>
+  <li><a href="https://github.com/n1nj4sec/pupy"><code class="highlighter-rouge">pupy</code> process injection</a></li>
+  <li><a href="http://ostrokonskiy.tk/2017/01/23/windows-privilege-escalation/">Security Notes Priv Esc</a></li>
+  <li><a href="https://security.stackexchange.com/questions/110673/how-to-find-windows-version-from-the-file-on-a-remote-system">fingerprint OS version</a></li>
+  <li>https://technet.microsoft.com/en-us/library/cc754340(v=ws.11).aspx</li>
+  <li><a href="https://pentest.blog/windows-privilege-escalation-methods-for-pentesters/">priv esc cheat sheet</a></li>
+</ul>
+
+<h3 id="windows-exploits">Windows Exploits</h3>
+<ul>
+  <li><a href="https://github.com/BADC0D3/WindowsExploits">abatchy17 WindoesExploits</a></li>
+</ul>
+
+<h3 id="passwords">Passwords</h3>
+<ul>
+  <li><a href="https://pastebin.com/sUuqBGHk">jollyfrogs windows priv esc</a></li>
+  <li><a href="./resources-password_cracking.md"><code class="highlighter-rouge">fgdump</code>,<code class="highlighter-rouge">pwdump</code>, <code class="highlighter-rouge">lsadump</code></a></li>
+</ul>
+
+<h3 id="services">Services</h3>
+<ul>
+  <li><a href="https://blog.didierstevens.com/2017/09/05/abusing-a-writable-windows-service/">Services Control Manager</a></li>
+</ul>
+
+<h3 id="powershell">Powershell</h3>
+
+<h4 id="privilege-escalation-finders">Privilege Escalation Finders</h4>
+<ul>
+  <li><a href="https://github.com/PowerShellMafia/PowerSploit">powersploit / PowerUp</a></li>
+  <li><a href="https://github.com/rasta-mouse/Sherlock">Sherlock.ps1</a></li>
+  <li><a href="https://ye110wbeard.wordpress.com/2012/05/21/three-ways-to-pass-credentials-in-a-powershell-script/">3 ways to pass creds to powershell</a></li>
+  <li><a href="https://github.com/PowerShellEmpire/PowerTools/tree/master/PowerUp"> PowerUp </a></li>
+  <li><a href="https://github.com/PowerShellEmpire/Empire/blob/master/data/module_source/privesc/Invoke-BypassUAC.ps1">bypassuac</a></li>
+</ul>
+
+<h3 id="group-policy-gpp">group policy GPP</h3>
+<ul>
+  <li><a href="https://adsecurity.org/?p=2288">Finding passwords in SYSVOL and exploit group policy</a></li>
+  <li><a href="https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Get-GPPPassword.ps1">Get-GPPPassword</a></li>
+  <li><a href="https://toshellandback.com/2015/11/24/ms-priv-esc/">Well, That Escalated Quickly</a></li>
+  <li><a href="https://www.toshellandback.com/2015/08/30/gpp/">What you know about GPP</a></li>
+</ul>
+
+<h2 id="binaries">Binaries</h2>
+<ul>
+  <li><a href="https://eternallybored.org/misc/netcat/">netcat</a></li>
+</ul>
+
+<hr />
+
+<h3 id="jollyfrogs">jollyfrogs</h3>
+<ul>
+  <li>https://blog.netspi.com/windows-privilege-escalation-part-1-local-administrator-privileges/</li>
+  <li>https://blog.netspi.com/windows-privilege-escalation-part-2-domain-admin-privileges/</li>
+  <li><a href="http://www.greyhathacker.net/?p=738">Elevating privileges by exploiting weak folder permissions</a></li>
+  <li><a href="http://www.primalsecurity.net/0x8-exploit-tutorial-the-elusive-egghunter/">0x8 Exploit Tutorial: The Elusive Egghunter</a></li>
+  <li><a href="https://hackmag.com/security/elevating-privileges-to-administrative-and-further/">top 10</a></li>
+</ul>
+
+<hr />
+
+<h3 id="miscellaneous--technology-grokking">Miscellaneous / Technology Grokking</h3>
+<ul>
+  <li><a href="https://www.curlybrace.com/words/2011/01/01/alternate-data-streams/">alternate data streams</a></li>
+  <li><a href="http://blog.programster.org/overlayfs">overlayfs</a></li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">0v3rthr0w</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">0v3rthr0w</li><li><a class="u-email" href="mailto:0v3rthr0w@gmail.com">0v3rthr0w@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/0v3rthr0w"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">0v3rthr0w</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>offsec resources</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

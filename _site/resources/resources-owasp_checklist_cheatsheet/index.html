@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>owasp_checklist_cheatsheet | 0v3rthr0w</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="owasp_checklist_cheatsheet" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The Checklist" />
+<meta property="og:description" content="The Checklist" />
+<link rel="canonical" href="http://localhost:4000/resources/resources-owasp_checklist_cheatsheet/" />
+<meta property="og:url" content="http://localhost:4000/resources/resources-owasp_checklist_cheatsheet/" />
+<meta property="og:site_name" content="0v3rthr0w" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-10T17:15:18-04:00" />
+<script type="application/ld+json">
+{"description":"The Checklist","@type":"BlogPosting","url":"http://localhost:4000/resources/resources-owasp_checklist_cheatsheet/","headline":"owasp_checklist_cheatsheet","dateModified":"2018-06-10T17:15:18-04:00","datePublished":"2018-06-10T17:15:18-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/resources/resources-owasp_checklist_cheatsheet/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="0v3rthr0w" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">0v3rthr0w</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/resources.html">Resources</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">owasp_checklist_cheatsheet</h1>
+  </header>
+
+  <div class="post-content">
+    <p>The Checklist</p>
+
+<p>[+] Information Gathering</p>
+
+<p>Manually explore the site
+Spider/crawl for missed or hidden content
+Check for files that expose content, such as robots.txt, sitemap.xml, .DS_Store
+Check the caches of major search engines for publicly accessible sites
+Check for differences in content based on User Agent (eg, Mobile sites, access as a Search engine Crawler)
+Perform Web Application Fingerprinting
+Identify technologies used
+Identify user roles
+Identify application entry points
+Identify client-side code
+Identify multiple versions/channels (e.g. web, mobile web, mobile app, web services)
+Identify co-hosted and related applications
+Identify all hostnames and ports
+Identify third-party hosted content</p>
+
+<p>[+] Configuration Management</p>
+
+<p>Check for commonly used application and administrative URLs
+Check for old, backup and unreferenced files
+Check HTTP methods supported and Cross Site Tracing (XST)
+Test file extensions handling
+Test for security HTTP headers (e.g. CSP, X-Frame-Options, HSTS)
+Test for policies (e.g. Flash, Silverlight, robots)
+Test for non-production data in live environment, and vice-versa
+Check for sensitive data in client-side code (e.g. API keys, credentials)</p>
+
+<p>[+] Secure Transmission</p>
+
+<p>Check SSL Version, Algorithms, Key length
+Check for Digital Certificate Validity (Duration, Signature and CN)
+Check credentials only delivered over HTTPS
+Check that the login form is delivered over HTTPS
+Check session tokens only delivered over HTTPS
+Check if HTTP Strict Transport Security (HSTS) in use</p>
+
+<p>[+] Authentication</p>
+
+<p>Test for user enumeration
+Test for authentication bypass
+Test for bruteforce protection
+Test password quality rules
+Test remember me functionality
+Test for autocomplete on password forms/input
+Test password reset and/or recovery
+Test password change process
+Test CAPTCHA
+Test multi factor authentication
+Test for logout functionality presence
+Test for cache management on HTTP (eg Pragma, Expires, Max-age)
+Test for default logins
+Test for user-accessible authentication history
+Test for out-of channel notification of account lockouts and successful password changes
+Test for consistent authentication across applications with shared authentication schema / SSO</p>
+
+<p>[+] Session Management</p>
+
+<p>Establish how session management is handled in the application (eg, tokens in cookies, token in URL)
+Check session tokens for cookie flags (httpOnly and secure)
+Check session cookie scope (path and domain)
+Check session cookie duration (expires and max-age)
+Check session termination after a maximum lifetime
+Check session termination after relative timeout
+Check session termination after logout
+Test to see if users can have multiple simultaneous sessions
+Test session cookies for randomness
+Confirm that new session tokens are issued on login, role change and logout
+Test for consistent session management across applications with shared session management
+Test for session puzzling
+Test for CSRF and clickjacking</p>
+
+<p>[+] Authorization</p>
+
+<p>Test for path traversal
+Test for bypassing authorization schema
+Test for vertical Access control problems (a.k.a. Privilege Escalation)
+Test for horizontal Access control problems (between two users at the same privilege level)
+Test for missing authorization</p>
+
+<p>[+] Data Validation</p>
+
+<p>Test for Reflected Cross Site Scripting
+Test for Stored Cross Site Scripting
+Test for DOM based Cross Site Scripting
+Test for Cross Site Flashing
+Test for HTML Injection
+Test for SQL Injection
+Test for LDAP Injection
+Test for ORM Injection
+Test for XML Injection
+Test for XXE Injection
+Test for SSI Injection
+Test for XPath Injection
+Test for XQuery Injection
+Test for IMAP/SMTP Injection
+Test for Code Injection
+Test for Expression Language Injection
+Test for Command Injection
+Test for Overflow (Stack, Heap and Integer)
+Test for Format String
+Test for incubated vulnerabilities
+Test for HTTP Splitting/Smuggling
+Test for HTTP Verb Tampering
+Test for Open Redirection
+Test for Local File Inclusion
+Test for Remote File Inclusion
+Compare client-side and server-side validation rules
+Test for NoSQL injection
+Test for HTTP parameter pollution
+Test for auto-binding
+Test for Mass Assignment
+Test for NULL/Invalid Session Cookie</p>
+
+<p>[+] Denial of Service</p>
+
+<p>Test for anti-automation
+Test for account lockout
+Test for HTTP protocol DoS
+Test for SQL wildcard DoS</p>
+
+<p>[+] Business Logic</p>
+
+<p>Test for feature misuse
+Test for lack of non-repudiation
+Test for trust relationships
+Test for integrity of data
+Test segregation of duties</p>
+
+<p>[+] Cryptography</p>
+
+<p>Check if data which should be encrypted is not
+Check for wrong algorithms usage depending on context
+Check for weak algorithms usage
+Check for proper use of salting
+Check for randomness functions</p>
+
+<p>[+] Risky Functionality - File Uploads</p>
+
+<p>Test that acceptable file types are whitelisted
+Test that file size limits, upload frequency and total file counts are defined and are enforced
+Test that file contents match the defined file type
+Test that all file uploads have Anti-Virus scanning in-place.
+Test that unsafe filenames are sanitised
+Test that uploaded files are not directly accessible within the web root
+Test that uploaded files are not served on the same hostname/port
+Test that files and other media are integrated with the authentication and authorisation schemas</p>
+
+<p>[+] Risky Functionality - Card Payment</p>
+
+<p>Test for known vulnerabilities and configuration issues on Web Server and Web Application
+Test for default or guessable password
+Test for non-production data in live environment, and vice-versa
+Test for Injection vulnerabilities
+Test for Buffer Overflows
+Test for Insecure Cryptographic Storage
+Test for Insufficient Transport Layer Protection
+Test for Improper Error Handling
+Test for all vulnerabilities with a CVSS v2 score &gt; 4.0
+Test for Authentication and Authorization issues
+Test for CSRF</p>
+
+<p>[+] HTML 5</p>
+
+<p>Test Web Messaging
+Test for Web Storage SQL injection
+Check CORS implementation
+Check Offline Web Application</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">0v3rthr0w</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">0v3rthr0w</li><li><a class="u-email" href="mailto:0v3rthr0w@gmail.com">0v3rthr0w@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/0v3rthr0w"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">0v3rthr0w</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>offsec resources</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

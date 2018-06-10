@@ -3,11 +3,12 @@ layout: default
 title: Resources
 ---
 
+<h2>Offensive Security Resources</h2>
 {% for resources in site.resources %}
 
 
 <a href="{{ resources.url | prepend: site.baseurl }}">
-        <h2>{{ resources.title }}</h2>
+        <h4>{{ resources.title }}</h4>
 </a>
 
 <p class="post-excerpt">{{ resources.description | truncate: 160 }}</p>
