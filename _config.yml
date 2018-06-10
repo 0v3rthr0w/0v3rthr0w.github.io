@@ -39,3 +39,8 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+collections: 
+  resources:
+    output: true
+    permalink: /resources/:path/

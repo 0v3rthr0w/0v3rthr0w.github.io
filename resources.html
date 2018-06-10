@@ -1,0 +1,15 @@
+---
+layout: default
+title: Resources
+---
+
+{% for resources in site.resources %}
+
+
+<a href="{{ resources.url | prepend: site.baseurl }}">
+        <h2>{{ resources.title }}</h2>
+</a>
+
+<p class="post-excerpt">{{ resources.description | truncate: 160 }}</p>
+
+{% endfor %}
